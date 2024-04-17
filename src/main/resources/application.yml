@@ -1,0 +1,39 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 400MB
+      max-request-size: 400MB
+  output:
+    ansi:
+      enabled: detect
+  jackson:
+    default-property-inclusion: non_null
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  main:
+    banner-mode: console
+  profiles:
+    active: default
+    include: storage
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+
+logging:
+  level:
+    root: info
+    com:
+      itheima:
+        admin:
+          mapper: debug
+
+upload:
+  ossType: LocalStorage
+
+server:
+  tomcat:
+    uri-encoding: utf-8
+  port: 9089
+  servlet:
+    context-path: /api
